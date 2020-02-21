@@ -1,0 +1,24 @@
+server:
+  port: 8899
+
+spring:
+  application:
+    name: InterviewRestApi
+  datasource:
+    url: jdbc:mysql://host.docker.internal:3306/interviews?useSSL=false&serverTimezone=Asia/Saigon&useLegacyDatetimeCode=false&characterEncoding=UTF-8
+    username: root
+    password: luongbv
+  jpa:
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+        show_sql: true
+    hibernate:
+      ddl-auto: none
+  flyway:
+    url: jdbc:mysql://host.docker.internal:3306/interviews
+    schemas: interviews
+    user: root
+    password: luongbv
+    baseline-on-migrate: true
+
